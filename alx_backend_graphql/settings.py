@@ -38,11 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_filters',
-
-    #third party
     'graphene_django',
-
-    #local apps
     'crm',
 ]
 
@@ -130,5 +126,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 GRAPHENE = {
-    "SCHEMA": "alx_backend_graphql_crm.schema.schema"
+    "SCHEMA": "alx_backend_graphql_crm.schema.schema",
+    "MIDDLEWARE": [
+        "graphene_django.debug.DjangoDebugMiddleware",
+    ],
 }
